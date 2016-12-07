@@ -7,14 +7,14 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.(js|jsx)$/, loader: 'babel',
+                test: /\.(js|jsx)$/, loader: 'babel-loader',
                 exclude: /node_modules/
             },
 
             {
                 test: /\.scss/,
                 loader: ExtractTextPlugin.extract({
-                    loader: ['css', 'sass']
+                    loader: ['css-loader', 'sass-loader']
                 })
             }
         ],

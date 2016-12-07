@@ -61,7 +61,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 22);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,6 +74,18 @@ module.exports = react;
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
+var root = __webpack_require__(15);
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
 "use strict";
 'use strict';
 
@@ -83,7 +95,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _uniqueId = __webpack_require__(17);
+var _uniqueId = __webpack_require__(20);
 
 var _uniqueId2 = _interopRequireDefault(_uniqueId);
 
@@ -91,11 +103,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _RuleGroup = __webpack_require__(3);
+var _RuleGroup = __webpack_require__(4);
 
 var _RuleGroup2 = _interopRequireDefault(_RuleGroup);
 
-var _index = __webpack_require__(7);
+var _index = __webpack_require__(8);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -172,12 +184,12 @@ var QueryBuilder = function (_React$Component) {
         value: function componentWillMount() {
             var _this2 = this;
 
-            var _props = this.props;
-            var fields = _props.fields;
-            var operators = _props.operators;
-            var combinators = _props.combinators;
-            var controlElements = _props.controlElements;
-            var controlClassnames = _props.controlClassnames;
+            var _props = this.props,
+                fields = _props.fields,
+                operators = _props.operators,
+                combinators = _props.combinators,
+                controlElements = _props.controlElements,
+                controlClassnames = _props.controlClassnames;
 
             var classNames = Object.assign({}, QueryBuilder.defaultControlClassnames, controlClassnames);
             var controls = Object.assign({}, QueryBuilder.defaultControlElements, controlElements);
@@ -218,12 +230,12 @@ var QueryBuilder = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _state = this.state;
-            var _state$root = _state.root;
-            var id = _state$root.id;
-            var rules = _state$root.rules;
-            var combinator = _state$root.combinator;
-            var schema = _state.schema;
+            var _state = this.state,
+                _state$root = _state.root,
+                id = _state$root.id,
+                rules = _state$root.rules,
+                combinator = _state$root.combinator,
+                schema = _state.schema;
 
 
             return _react2.default.createElement(
@@ -244,9 +256,9 @@ var QueryBuilder = function (_React$Component) {
     }, {
         key: 'createRule',
         value: function createRule() {
-            var _state$schema = this.state.schema;
-            var fields = _state$schema.fields;
-            var operators = _state$schema.operators;
+            var _state$schema = this.state.schema,
+                fields = _state$schema.fields,
+                operators = _state$schema.operators;
 
 
             return {
@@ -393,8 +405,8 @@ var QueryBuilder = function (_React$Component) {
 
 
             if (isRuleGroup(node)) {
-                var combinator = node.combinator;
-                var rules = node.rules;
+                var combinator = node.combinator,
+                    rules = node.rules;
 
                 query = {
                     combinator: combinator,
@@ -403,9 +415,9 @@ var QueryBuilder = function (_React$Component) {
                     })
                 };
             } else {
-                var field = node.field;
-                var operator = node.operator;
-                var value = node.value;
+                var field = node.field,
+                    operator = node.operator,
+                    value = node.value;
 
                 query = { field: field, operator: operator, value: value };
             }
@@ -466,7 +478,7 @@ var QueryBuilder = function (_React$Component) {
 exports.default = QueryBuilder;
 
 /***/ },
-/* 2 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -511,9 +523,9 @@ var Rule = function (_React$Component) {
         }, _this.onValueChanged = function (value) {
             _this.onElementChanged('value', value);
         }, _this.onElementChanged = function (property, value) {
-            var _this$props = _this.props;
-            var id = _this$props.id;
-            var onPropChange = _this$props.schema.onPropChange;
+            var _this$props = _this.props,
+                id = _this$props.id,
+                onPropChange = _this$props.schema.onPropChange;
 
 
             onPropChange(property, value, id);
@@ -528,16 +540,16 @@ var Rule = function (_React$Component) {
     _createClass(Rule, [{
         key: 'render',
         value: function render() {
-            var _props = this.props;
-            var field = _props.field;
-            var operator = _props.operator;
-            var value = _props.value;
-            var _props$schema = _props.schema;
-            var fields = _props$schema.fields;
-            var operators = _props$schema.operators;
-            var controls = _props$schema.controls;
-            var getOperators = _props$schema.getOperators;
-            var classNames = _props$schema.classNames;
+            var _props = this.props,
+                field = _props.field,
+                operator = _props.operator,
+                value = _props.value,
+                _props$schema = _props.schema,
+                fields = _props$schema.fields,
+                operators = _props$schema.operators,
+                controls = _props$schema.controls,
+                getOperators = _props$schema.getOperators,
+                classNames = _props$schema.classNames;
 
             return _react2.default.createElement(
                 'div',
@@ -587,7 +599,7 @@ var Rule = function (_React$Component) {
 exports.default = Rule;
 
 /***/ },
-/* 3 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -603,7 +615,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Rule = __webpack_require__(2);
+var _Rule = __webpack_require__(3);
 
 var _Rule2 = _interopRequireDefault(_Rule);
 
@@ -638,9 +650,9 @@ var RuleGroup = function (_React$Component) {
             event.preventDefault();
             event.stopPropagation();
 
-            var _this$props$schema = _this.props.schema;
-            var createRule = _this$props$schema.createRule;
-            var onRuleAdd = _this$props$schema.onRuleAdd;
+            var _this$props$schema = _this.props.schema,
+                createRule = _this$props$schema.createRule,
+                onRuleAdd = _this$props$schema.onRuleAdd;
 
 
             var newRule = createRule();
@@ -649,9 +661,9 @@ var RuleGroup = function (_React$Component) {
             event.preventDefault();
             event.stopPropagation();
 
-            var _this$props$schema2 = _this.props.schema;
-            var createRuleGroup = _this$props$schema2.createRuleGroup;
-            var onGroupAdd = _this$props$schema2.onGroupAdd;
+            var _this$props$schema2 = _this.props.schema,
+                createRuleGroup = _this$props$schema2.createRuleGroup,
+                onGroupAdd = _this$props$schema2.onGroupAdd;
 
             var newGroup = createRuleGroup();
             onGroupAdd(newGroup, _this.props.id);
@@ -668,15 +680,15 @@ var RuleGroup = function (_React$Component) {
         value: function render() {
             var _this2 = this;
 
-            var _props = this.props;
-            var combinator = _props.combinator;
-            var rules = _props.rules;
-            var _props$schema = _props.schema;
-            var combinators = _props$schema.combinators;
-            var controls = _props$schema.controls;
-            var onRuleRemove = _props$schema.onRuleRemove;
-            var isRuleGroup = _props$schema.isRuleGroup;
-            var classNames = _props$schema.classNames;
+            var _props = this.props,
+                combinator = _props.combinator,
+                rules = _props.rules,
+                _props$schema = _props.schema,
+                combinators = _props$schema.combinators,
+                controls = _props$schema.controls,
+                onRuleRemove = _props$schema.onRuleRemove,
+                isRuleGroup = _props$schema.isRuleGroup,
+                classNames = _props$schema.classNames;
 
             return _react2.default.createElement(
                 'div',
@@ -743,7 +755,7 @@ var RuleGroup = function (_React$Component) {
 exports.default = RuleGroup;
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -790,10 +802,10 @@ var ActionElement = function (_React$Component) {
   _createClass(ActionElement, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var label = _props.label;
-      var className = _props.className;
-      var handleOnClick = _props.handleOnClick;
+      var _props = this.props,
+          label = _props.label,
+          className = _props.className,
+          handleOnClick = _props.handleOnClick;
 
 
       return _react2.default.createElement(
@@ -813,7 +825,7 @@ var ActionElement = function (_React$Component) {
 exports.default = ActionElement;
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -861,11 +873,11 @@ var ValueEditor = function (_React$Component) {
   _createClass(ValueEditor, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var field = _props.field;
-      var operator = _props.operator;
-      var value = _props.value;
-      var handleOnChange = _props.handleOnChange;
+      var _props = this.props,
+          field = _props.field,
+          operator = _props.operator,
+          value = _props.value,
+          handleOnChange = _props.handleOnChange;
 
 
       if (operator === 'null' || operator === 'notNull') {
@@ -886,7 +898,7 @@ var ValueEditor = function (_React$Component) {
 exports.default = ValueEditor;
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -934,11 +946,11 @@ var ValueSelector = function (_React$Component) {
   _createClass(ValueSelector, [{
     key: 'render',
     value: function render() {
-      var _props = this.props;
-      var value = _props.value;
-      var options = _props.options;
-      var className = _props.className;
-      var handleOnChange = _props.handleOnChange;
+      var _props = this.props,
+          value = _props.value,
+          options = _props.options,
+          className = _props.className,
+          handleOnChange = _props.handleOnChange;
 
 
       return _react2.default.createElement(
@@ -965,7 +977,7 @@ var ValueSelector = function (_React$Component) {
 exports.default = ValueSelector;
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -975,7 +987,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ValueEditor = __webpack_require__(5);
+var _ValueEditor = __webpack_require__(6);
 
 Object.defineProperty(exports, 'ValueEditor', {
   enumerable: true,
@@ -984,7 +996,7 @@ Object.defineProperty(exports, 'ValueEditor', {
   }
 });
 
-var _ValueSelector = __webpack_require__(6);
+var _ValueSelector = __webpack_require__(7);
 
 Object.defineProperty(exports, 'ValueSelector', {
   enumerable: true,
@@ -993,7 +1005,7 @@ Object.defineProperty(exports, 'ValueSelector', {
   }
 });
 
-var _ActionElement = __webpack_require__(4);
+var _ActionElement = __webpack_require__(5);
 
 Object.defineProperty(exports, 'ActionElement', {
   enumerable: true,
@@ -1003,18 +1015,6 @@ Object.defineProperty(exports, 'ActionElement', {
 });
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-var root = __webpack_require__(12);
-
-/** Built-in value references. */
-var Symbol = root.Symbol;
-
-module.exports = Symbol;
-
 
 /***/ },
 /* 9 */
@@ -1031,7 +1031,7 @@ module.exports = Symbol;
  */
 function arrayMap(array, iteratee) {
   var index = -1,
-      length = array ? array.length : 0,
+      length = array == null ? 0 : array.length,
       result = Array(length);
 
   while (++index < length) {
@@ -1047,10 +1047,45 @@ module.exports = arrayMap;
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(8),
+var Symbol = __webpack_require__(1),
+    getRawTag = __webpack_require__(13),
+    objectToString = __webpack_require__(14);
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  value = Object(value);
+  return (symToStringTag && symToStringTag in value)
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(1),
     arrayMap = __webpack_require__(9),
-    isArray = __webpack_require__(13),
-    isSymbol = __webpack_require__(15);
+    isArray = __webpack_require__(16),
+    isSymbol = __webpack_require__(18);
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
@@ -1087,7 +1122,7 @@ module.exports = baseToString;
 
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -1095,13 +1130,93 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21)))
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(11);
+var Symbol = __webpack_require__(1);
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+
+/***/ },
+/* 14 */
+/***/ function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(12);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -1113,7 +1228,7 @@ module.exports = root;
 
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports) {
 
 /**
@@ -1145,7 +1260,7 @@ module.exports = isArray;
 
 
 /***/ },
-/* 14 */
+/* 17 */
 /***/ function(module, exports) {
 
 /**
@@ -1180,23 +1295,14 @@ module.exports = isObjectLike;
 
 
 /***/ },
-/* 15 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
-var isObjectLike = __webpack_require__(14);
+var baseGetTag = __webpack_require__(10),
+    isObjectLike = __webpack_require__(17);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the
- * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
 
 /**
  * Checks if `value` is classified as a `Symbol` primitive or object.
@@ -1217,17 +1323,17 @@ var objectToString = objectProto.toString;
  */
 function isSymbol(value) {
   return typeof value == 'symbol' ||
-    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
 }
 
 module.exports = isSymbol;
 
 
 /***/ },
-/* 16 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
-var baseToString = __webpack_require__(10);
+var baseToString = __webpack_require__(11);
 
 /**
  * Converts `value` to a string. An empty string is returned for `null`
@@ -1258,10 +1364,10 @@ module.exports = toString;
 
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-var toString = __webpack_require__(16);
+var toString = __webpack_require__(19);
 
 /** Used to generate unique IDs. */
 var idCounter = 0;
@@ -1292,7 +1398,7 @@ module.exports = uniqueId;
 
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports) {
 
 var g;
@@ -1317,7 +1423,7 @@ module.exports = g;
 
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1327,7 +1433,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _QueryBuilder = __webpack_require__(1);
+var _QueryBuilder = __webpack_require__(2);
 
 Object.defineProperty(exports, 'QueryBuilder', {
   enumerable: true,
