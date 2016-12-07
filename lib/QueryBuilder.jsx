@@ -1,5 +1,6 @@
-import uniqueId from 'lodash/uniqueId';
 import React from 'react';
+import uniqueId from 'lodash/uniqueId';
+
 
 import RuleGroup from './RuleGroup';
 import { ActionElement, ValueEditor, ValueSelector } from './controls/index';

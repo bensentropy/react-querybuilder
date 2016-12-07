@@ -14,7 +14,7 @@ module.exports = merge(webpackCommon, {
         path: path.resolve(__dirname, '../dist')
     },
     externals: [
-        'react',
+        'React',
         'react-dom',
     ],
 
