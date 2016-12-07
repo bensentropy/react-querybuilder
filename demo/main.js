@@ -1,6 +1,6 @@
 import '../lib/query-builder.scss';
 import {QueryBuilder} from '../lib/index';
-import {render} from "react-dom";
+// import {render} from "react-dom";
 import React from 'react';
 
 const fields = [
@@ -72,6 +72,4 @@ class RootView extends React.Component {
     }
 
 }
-
-render(<RootView fields={fields} />, document.querySelector('.container'));
 
