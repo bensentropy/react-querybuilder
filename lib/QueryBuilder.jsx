@@ -6,7 +6,7 @@ import RuleGroup from './RuleGroup';
 import { ActionElement, ValueEditor, ValueSelector } from './controls/index';
 
 
-export default class QueryBuilder extends React.Component {
+export class QueryBuilder extends React.Component {
     static get defaultProps() {
         return {
             query: null,
